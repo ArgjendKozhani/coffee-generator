@@ -33,7 +33,12 @@ function CoffeeGenerator() {
         <>
             {data ? (
                 <div className="container">
-                  <button
+               
+
+                    <img src={data.results[count].urls.regular} alt="" />
+                    <p>{data.results[count].alt_description || "Coffee photo"}</p>
+
+                      <button
                   className="prev"
                         onClick={() => setPage((prev) => (prev > 1 ? prev - 1 : 1))}
                     >Previous Page</button>
@@ -47,9 +52,6 @@ function CoffeeGenerator() {
                     >
                      Next Page 
                     </button>
- <p>{data.results[count].alt_description || "Coffee photo"}</p>
-                    <img src={data.results[count].urls.regular} alt="" />
-                   
                 </div>
             ) : (
                 ""
